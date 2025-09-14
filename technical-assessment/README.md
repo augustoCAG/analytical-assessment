@@ -161,7 +161,7 @@ The instructions for this part were to **implement the pipeline in BigQuery and 
 Here’s how I would approach it:
 
 ### Phase 1: Google Cloud Setup -  prepare Google Cloud environment
-- Create a new GCP project (e.g. `ancient-gaming-pipeline`) in [GCP Console] (https://console.cloud.google.com/).  
+- Create a new GCP project (e.g. `ancient-gaming-pipeline`) in [GCP Console](https://console.cloud.google.com/).  
 - Enable the required APIs in the [API Library](https://console.cloud.google.com/apis/library): **BigQuery API**, **Cloud Composer API**, **Cloud Storage API**.  
 - Create a GCS bucket in the correct region for raw data (e.g. `ancient-gaming-raw-data-aca`) to store the CSVs.  
 
