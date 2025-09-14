@@ -2,7 +2,7 @@
 
 This repository contains my submission for the **Analytics Engineer position assessment**.  
 
-The work is organized according to the assignment requirements and divided into four main parts (A–D):  
+The work is organized according to the assignment requirements and divided into three main parts (1–3):  
 
 - **Part 1 - Task 1 (Notebook)** -> Data quality checks + cleaning based on **5 business rules**.  
 - **Part 1 - Task 2 (Python Script)**- > Expansion of cleaned data to **1000 rows per table** (`players`, `affiliates`, `transactions`).  
