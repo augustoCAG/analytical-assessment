@@ -151,9 +151,7 @@ Orchestration setup:
 
 ## Part 3 / Bonus  - Task 2 — Pipeline Implementation (BigQuery & Google Cloud Composer)
  
-- I have **never used Google Cloud Composer**.  
-- Unfortunately, I could not finish this task within the deadline.  
-- However, I did research the steps and how I would try to address this requirement if I had more time.  
+Although I have **never used Google Cloud Composer**, and unfortunately, I could not correctly finish this task within the deadline. However, I did research the steps and how I would try to address this requirement if I had more time.  
 
 The instructions for this part were to **implement the pipeline in BigQuery and orchestrate it with Airflow on Google Cloud Composer**.  
 
@@ -179,7 +177,15 @@ Here’s how I would approach it:
 - Upload both the `airflow/` folder (with the DAG) and the `dbt/` project folder into Composer’s DAGs bucket.  
 - In the Airflow UI, trigger the DAG (`dbt_ancient_gaming_pipeline`).  
 - Airflow (via Astronomer Cosmos) would dynamically generate tasks for each dbt model, respecting dependencies.  
-- After a successful run, check BigQuery for the `dbt_ancient_gaming` dataset containing the three final dbt models.  
+- After a successful run, check BigQuery for the `dbt_ancient_gaming` dataset containing the three final dbt models. 
+
+###
+
+- I thought about error handling and retries in Airflow, including configuring an email account to send alerts for warnings or task failures so the team is immediately notified of issues.
+- I considered modularizing dbt models so each step could be independently tested and maintained.
+- I would implement logging and monitoring, leveraging Composer’s built-in Airflow UI and BigQuery query history.
+- To ensure data quality, I would create Singular data tests using SQL to validate key business rules (e.g., verifying transaction totals).
+- While I have not implemented and executed this pipeline yet, I focused on understanding the integration points between GCS, BigQuery, Airflow, and dbt, which would allow me to quickly implement the pipeline in practice.
 
 
 ---
