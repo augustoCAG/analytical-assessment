@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_players
+    columns:
+      - name: player_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: player_id
+        tests:
+          - relationships:
+              to: ref('stg_players')
+              field: player_id
+      - name: transaction_type
+        tests:
+          - accepted_values:
+              values: ['Deposit', 'Withdraw']
+  - name: stg_affiliates
+    columns:
+      - name: affiliate_id
+        tests:
+          - unique
+          - not_null

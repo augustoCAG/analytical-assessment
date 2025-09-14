@@ -1,0 +1,18 @@
+# dbt/profiles.yml
+
+# Define the connection with Google BigQuery
+
+ancient_gaming:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth # This method uses the service account of the Cloud Composer environment
+      
+      # These variables are dynamically inputed by Airflow
+      project: "{{ env_var('GCP_PROJECT') }}" 
+      dataset: "{{ env_var('DBT_DATASET', 'dbt_ancient_gaming') }}"
+      
+      threads: 4 # Number of threads for dbt to use
+      timeout_seconds: 300 # Timeout of 5 minutes
+      location: "EU" # BigQuery datasets region

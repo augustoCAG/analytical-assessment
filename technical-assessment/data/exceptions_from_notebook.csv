@@ -1,0 +1,11 @@
+id,affiliate_id,country_code,is_kyc_approved,created_at,updated_at,reason,timestamp,player_id,type,amount,player_is_kyc,player_created_at,_merge
+10,8,CA,False,2024-10-14 23:45:05+00:00,2024-11-04 11:19:33+00:00,duplicate_player_id,,,,,,,
+10,8,CA,True,2024-10-14 23:45:05+00:00,2024-11-06 12:31:09+00:00,duplicate_player_id,,,,,,,
+4,,,,,,tx_by_unkyc_player,2024-02-24 04:35:15+00:00,5.0,Deposit,304.94,False,2024-03-27 16:28:29+00:00,both
+10,,,,,,tx_by_unkyc_player,2024-10-14 23:45:05+00:00,5.0,Withdraw,292.85,False,2024-03-27 16:28:29+00:00,both
+1,,,,,,tx_before_player_creation,2024-01-10 17:07:01+00:00,7.0,Withdraw,213.13,True,2024-04-16 19:27:32+00:00,both
+2,,,,,,tx_before_player_creation,2024-02-09 19:19:27+00:00,4.0,Withdraw,182.64,True,2024-02-24 04:35:15+00:00,both
+3,,,,,,tx_before_player_creation,2024-02-13 05:40:50+00:00,8.0,Withdraw,184.22,True,2024-09-05 07:53:23+00:00,both
+4,,,,,,tx_before_player_creation,2024-02-24 04:35:15+00:00,5.0,Deposit,304.94,False,2024-03-27 16:28:29+00:00,both
+5,,,,,,tx_before_player_creation,2024-03-27 16:28:29+00:00,7.0,Withdraw,525.23,True,2024-04-16 19:27:32+00:00,both
+6,,,,,,tx_before_player_creation,2024-04-05 02:33:27+00:00,10.0,Deposit,432.51,True,2024-10-14 23:45:05+00:00,both

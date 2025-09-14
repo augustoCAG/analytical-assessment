@@ -1,0 +1,16 @@
+# dbt_project.yml
+
+name: 'ancient_gaming'
+version: '1.0.0'
+config-version: 2
+profile: 'ancient_gaming'
+
+
+# Configuring models
+
+models:
+  ancient_gaming:
+    staging:
+      materialized: view
+    marts:
+      materialized: table

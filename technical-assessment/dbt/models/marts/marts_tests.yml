@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: player_daily_transactions
+    columns:
+      - name: player_id
+        tests:
+          - not_null
+  - name: country_deposit_analysis
+    columns:
+      - name: country_code
+        tests:
+          - not_null
+  - name: player_top_three_deposits
+    columns:
+      - name: player_id
+        tests:
+          - unique
+          - not_null
