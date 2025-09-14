@@ -165,7 +165,7 @@ Here’s how I would approach it:
 - Enable the required APIs in the [API Library](https://console.cloud.google.com/apis/library): **BigQuery API**, **Cloud Composer API**, **Cloud Storage API**.  
 - Create a GCS bucket in the correct region for raw data (e.g. `ancient-gaming-raw-data-aca`) to store the CSVs.  
 
-### Phase 2: Load Raw Data into BigQuery - get CSV files into BigQuery (so DBT can access them)
+### Phase 2: Load Raw Data into BigQuery - get CSV files into BigQuery (so dbt can access them)
 - Upload the CSV files `players.csv`, `affiliates.csv`, and `transactions.csv` to the GCS bucket created in the previous step.  
 - Create a BigQuery dataset (ID example: `ancient_gaming_raw`).  
 - Create tables in the new dataset from the uploaded CSVs (Google Cloud Storage -> GCS bucket created), letting BigQuery **auto-detect schema and input parameters** - one table corresponding to each file (`players`, `affiliates`, and `transactions`).  
