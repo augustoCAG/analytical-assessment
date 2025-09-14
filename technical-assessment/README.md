@@ -160,27 +160,27 @@ The instructions for this part were to **implement the pipeline in BigQuery and 
 
 Here’s how I would approach it:
 
-### Phase 1: Google Cloud Setup
-- Create a new GCP project (e.g. `ancient-gaming-pipeline`).  
-- Enable the required APIs: **BigQuery API**, **Cloud Composer API**, **Cloud Storage API**.  
-- Create a GCS bucket (e.g. `ancient-gaming-raw-data`) to store the CSVs.  
+### Phase 1: Google Cloud Setup -  prepare Google Cloud environment
+- Create a new GCP project (e.g. `ancient-gaming-pipeline`) in [GCP Console] (https://console.cloud.google.com/).  
+- Enable the required APIs in the [API Library](https://console.cloud.google.com/apis/library): **BigQuery API**, **Cloud Composer API**, **Cloud Storage API**.  
+- Create a GCS bucket in the correct region for raw data (e.g. `ancient-gaming-raw-data-aca`) to store the CSVs.  
 
-### Phase 2: Load Raw Data into BigQuery
-- Upload the `players.csv`, `affiliates.csv`, and `transactions.csv` to the GCS bucket.  
-- Create a BigQuery dataset (`ancient_gaming_raw`).  
-- Create tables from the uploaded CSVs, letting BigQuery **auto-detect schemas**.  
+### Phase 2: Load Raw Data into BigQuery - get CSV files into BigQuery (so DBT can access them)
+- Upload the CSV files `players.csv`, `affiliates.csv`, and `transactions.csv` to the GCS bucket created in the previous step.  
+- Create a BigQuery dataset (ID example: `ancient_gaming_raw`).  
+- Create tables in the new dataset from the uploaded CSVs (Google Cloud Storage -> GCS bucket created), letting BigQuery **auto-detect schema and input parameters** - one table corresponding to each file (`players`, `affiliates`, and `transactions`).  
 
-### Phase 3: Set Up Cloud Composer
-- Create a Composer 2 environment (e.g. `ancient-gaming-orchestrator`).  
-- Install the required PyPI dependency: `apache-airflow-providers-astronomer-cosmos`.  
-- Configure the Composer service account with roles: **BigQuery User** and **BigQuery Data Editor**.  
-- Add an Airflow variable (`DBT_DATASET = dbt_ancient_gaming`) for the target dataset.  
+### Phase 3: Set Up Cloud Composer - create the Airflow environment that will run the DAG
+- In GCP Console, create a Composer 2 environment (e.g. `ancient-gaming-orchestrator`) in a certain region.  
+- Install the required PyPI dependency: add the package `apache-airflow-providers-astronomer-cosmos` - this can take a while.  
+- In IAM & Admin -> IAM, give the service account associated with the Composer environment (e.g., `composer-env-name@...`) the permissions to run jobs in BigQuery: add the roles **BigQuery User** and **BigQuery Data Editor** to the account.  
+- In the Admin section of the Airflow UI, add an Airflow variable key-value pair (e.g., `DBT_DATASET = dbt_ancient_gaming` for the `dbt_ancient_gaming` dataset) for the target dataset (where the final models will be created).  
 
-### Phase 4: Deploy and Test Run
-- Upload both the `airflow/` folder (with the DAG) and the `dbt/` project folder into Composer’s DAGs bucket.  
-- In the Airflow UI, trigger the DAG (`dbt_ancient_gaming_pipeline`).  
+### Phase 4: Deploy and Test Run - deploy and run the pipeline
+- Upload both the `airflow/` folder (with the DAG) and the `dbt/` project folder (with the models) into Composer’s DAGs bucket (GCP Console -> Composer environment's details page -> DAGs folder).  
+- After a few minutes, in the Airflow UI, trigger the DAG (`dbt_ancient_gaming_pipeline`) and check the tasks shown in the Graph.  
 - Airflow (via Astronomer Cosmos) would dynamically generate tasks for each dbt model, respecting dependencies.  
-- After a successful run, check BigQuery for the `dbt_ancient_gaming` dataset containing the three final dbt models. 
+- After a successful run, check BigQuery for the new `dbt_ancient_gaming` dataset containing the three tables (created by the dbt marts/final models). 
 
 ### Additional Considerations
 
