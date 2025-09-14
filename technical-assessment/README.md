@@ -14,7 +14,7 @@ The work is organized according to the assignment requirements and divided into 
 
 
 ## Repository Structure
-
+```
 ├── airflow/
 │   └── dags/
 │       └── ancient_gaming_pipeline.py
@@ -56,6 +56,7 @@ The work is organized according to the assignment requirements and divided into 
 │   └── part_1_task_2__expand_clean_data.py
 │
 └── README.md
+```
 
 ---
 
