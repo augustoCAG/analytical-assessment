@@ -179,7 +179,7 @@ Here’s how I would approach it:
 - Airflow (via Astronomer Cosmos) would dynamically generate tasks for each dbt model, respecting dependencies.  
 - After a successful run, check BigQuery for the `dbt_ancient_gaming` dataset containing the three final dbt models. 
 
-###
+### Additional Considerations
 
 - I thought about error handling and retries in Airflow, including configuring an email account to send alerts for warnings or task failures so the team is immediately notified of issues.
 - I considered modularizing dbt models so each step could be independently tested and maintained.
