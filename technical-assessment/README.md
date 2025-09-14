@@ -7,8 +7,8 @@ The work is organized according to the assignment requirements and divided into 
 - **Part 1 - Task 1 (Notebook)** -> Data quality checks + cleaning based on **5 business rules**.  
 - **Part 1 - Task 2 (Python Script)**- > Expansion of cleaned data to **1000 rows per table** (`players`, `affiliates`, `transactions`).  
 - **Part 2 (dbt Models)** -> Transformation layer in dbt with three staging and three marts models answering the business questions.  
-- **Part 3 (Optional / Bonus)** -> Airflow orchestration of dbt models. Includes research notes and a boilerplate DAG for potential deployment in Google Cloud Composer.  
-
+- **Part 3 - Task 1 (Optional / Bonus)** -> Airflow orchestration of dbt models. Includes a DAG considering the implementation of dbt models in BigQuery.
+- **Part 3 - Task 2 (Optional / Bonus)** -> Pipeline implementation in BigQuery + Google Cloud Composer. Includes research notes.
 
 ---
 
