@@ -16,44 +16,44 @@ The work is organized according to the assignment requirements and divided into 
 ## Repository Structure
 
 ├── airflow/
-│ └── dags/
-│   └── ancient_gaming_pipeline.py
+│   └── dags/
+│       └── ancient_gaming_pipeline.py
 │
 ├── data/
-│ ├── affiliates_cleaned_from_notebook.csv
-│ ├── affiliates_expanded.csv
-│ ├── exceptions_from_notebook.csv
-│ ├── players_cleaned_from_notebook.csv
-│ ├── players_expanded.csv
-│ ├── Sample_data_-Technical_Interview-affiliates.csv
-│ ├── Sample_data-Technical_Interview-players.csv
-│ ├── Sample_data-Technical_Interview-_transactions.csv
-│ ├── transactions_cleaned_from_notebook.csv
-│ └── transactions_expanded.csv
+│   ├── affiliates_cleaned_from_notebook.csv
+│   ├── affiliates_expanded.csv
+│   ├── exceptions_from_notebook.csv
+│   ├── players_cleaned_from_notebook.csv
+│   ├── players_expanded.csv
+│   ├── Sample_data_-Technical_Interview-affiliates.csv
+│   ├── Sample_data-Technical_Interview-players.csv
+│   ├── Sample_data-Technical_Interview-_transactions.csv
+│   ├── transactions_cleaned_from_notebook.csv
+│   └── transactions_expanded.csv
 │
 ├── dbt/
-│ ├── dbt_project.yml
-│ ├── profiles.yml
-│ └── models/
-│   ├── staging/
-│   │ ├── sources.yml
-│   │ ├── staging_tests.yml
-│   │ ├── stg_affiliates.sql
-│   │ ├── stg_players.sql
-│   │ └── stg_transactions.sql
-│   │
-│   └── marts/
-│     ├── marts_tests.yml
-│     ├── country_deposit_analysis.sql
-│     ├── player_daily_transactions.sql
-│     └── player_top_three_deposits.sql
+│   ├── dbt_project.yml
+│   ├── profiles.yml
+│   └── models/
+│       ├── staging/
+│       │   ├── sources.yml
+│       │   ├── staging_tests.yml
+│       │   ├── stg_affiliates.sql
+│       │   ├── stg_players.sql
+│       │   └── stg_transactions.sql
+│       │
+│       └── marts/
+│           ├── marts_tests.yml
+│           ├── country_deposit_analysis.sql
+│           ├── player_daily_transactions.sql
+│           └── player_top_three_deposits.sql
 │
 ├── notebooks/
-│ ├── eda.ipynb
-│ └── part_1_task_1__preprocess_data.ipynb 
+│   ├── eda.ipynb
+│   └── part_1_task_1__preprocess_data.ipynb
 │
 ├── scripts/
-│ └── part_1_task_2__expand_clean_data.py 
+│   └── part_1_task_2__expand_clean_data.py
 │
 └── README.md
 
